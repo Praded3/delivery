@@ -1,0 +1,79 @@
+body{
+    position: static;
+}
+.shops__section{
+    display: flex;
+    justify-content: center;
+    // flex-direction: row;
+    gap: 50px;
+}
+.product__container{
+    display: flex;
+    // position: fixed;
+    height: 70vh;
+    overflow-y: scroll;
+}
+
+.product__list {
+    display: flex;
+    // flex-direction: column;
+    flex-wrap: wrap;
+    row-gap: 40px;
+    column-gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+.product__img{
+    object-fit: contain;
+}
+.product__item {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    border: 2px solid $color_accent;
+    border-radius: 15px;
+    padding: 20px;
+}
+._list {
+}
+.product__title {
+    max-width: 300px;
+}
+.product__btn {
+    display: flex;
+    align-self: flex-end;
+    padding: 10px 25px;
+}
+.shops__container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+._container {
+}
+.main-title {
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 150%;
+}
+.shops__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 25px;
+}
+.shops__item {
+}
+._list {
+}
+.shops__link {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 150%;
+    color: $primery-text-color;
+}
+._link {
+}

@@ -17,8 +17,100 @@
 
 <body>
   <main>
+    <section class='cart__section _section'>
+      <form class="modal-form" autocomplete="on">
+        <div class='cart__container-decorative _container'>
+          <div class='cart__container-inputs _container'>
+            <h3 class='inputs__title'>Data for feedback</h3>
 
+
+            <ul class='iputs__list '>
+              <li class='_list iputs__item'>
+                <input autocomplete="on" minlength="3" class="modal__input-adress last-step-input _req-big"
+                  name="modal-name" placeholder="Full Name" type="text">
+              </li>
+              <li class='_list iputs__item'>
+                <input autocomplete="on" minlength="3" class="modal__input-adress last-step-input _req-big _req-big-tel"
+                  name="modal-phone" placeholder="Phone Number" type="tel">
+
+              </li>
+              <li class='_list iputs__item'>
+                <input autocomplete="on" minlength="3"
+                  class="modal__input-adress last-step-input _req-big _req-big-mail" name="modal-mail"
+                  placeholder="E-Mail Address" type="email">
+              </li>
+              <li class='_list iputs__item'>
+                <input id="pac-input" class="modal__input-adress modal-zip last-step-input wqwqwqwqw" name="modal-zip"
+                  placeholder="Address" type="text">
+              </li>
+
+
+            </ul>
+
+          </div>
+          <div class='cart__orders _container'>
+            <ul class='orders__list'>
+              <li class='orders__item _list'>
+                <img src="./images/12.jpg" alt="" width="50%">
+                <div class="orders__item-container ">
+                  <h2 class='orders__title'>big burg</h2>
+                  <h3 class='orders__price-title'>Price: <span class='orders__price-value'>23</span></h3>
+                  <input class="orders__quantity" type="number" min="0" max="100" step="1" name="quantity">
+                  <h3 class='orders__total'>Total: <span class='orders__total-value'>23</span></h3>
+
+                  <button type='button' class='orders__btn'>X</button>
+                </div>
+              </li>
+              <li class='orders__item _list'>
+                <img src="./images/12.jpg" alt="" width="50%">
+                <div class="orders__item-container ">
+                  <h2 class='orders__title'>big burg</h2>
+                  <h3 class='orders__price-title'>Price: <span class='orders__price-value'>23</span></h3>
+                  <input class="orders__quantity" type="number" min="0" max="100" step="1" name="quantity">
+                  <h3 class='orders__total'>Total: <span class='orders__total-value'>23</span></h3>
+
+                  <button type='button' class='orders__btn'>X</button>
+                </div>
+              </li>
+              <li class='orders__item _list'>
+                <img src="./images/12.jpg" alt="" width="50%">
+                <div class="orders__item-container ">
+                  <h2 class='orders__title'>big burg</h2>
+                  <h3 class='orders__price-title'>Price: <span class='orders__price-value'>23</span></h3>
+                  <input class="orders__quantity" type="number" min="0" max="100" step="1" name="quantity">
+                  <h3 class='orders__total'>Total: <span class='orders__total-value'>23</span></h3>
+
+                  <button type='button' class='orders__btn'>X</button>
+                </div>
+              </li>
+              <li class='orders__item _list'>
+                <img src="./images/12.jpg" alt="" width="50%">
+                <div class="orders__item-container ">
+                  <h2 class='orders__title'>big burg</h2>
+                  <h3 class='orders__price-title'>Price: <span class='orders__price-value'>23</span></h3>
+                  <input class="orders__quantity" type="number" min="0" max="100" step="1" name="quantity">
+                  <h3 class='orders__total'>Total: <span class='orders__total-value'>23</span></h3>
+
+                  <button type='button' class='orders__btn'>X</button>
+                </div>
+              </li>
+
+
+            </ul>
+          </div>
+        </div>
+
+
+        <button type='submit' class='submit__btn'>Submit</button>
+      </form>
+    </section>
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDW-p4nZpSUbbOWr0MdEUruheMS1uooSQw&libraries=places&callback=initAutocomplete"
+    async defer></script>
+  <script src="./map.js"></script>
+  <script src="./form-send.js"></script>
 </body>
 <footer>
   <include src="./partials/footer.html"></include>

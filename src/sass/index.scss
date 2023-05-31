@@ -1,12 +1,11 @@
 @import './common';
-@import './null.scss';
+@import './null';
 @import './root';
 @import './header';
 @import './component';
-@import './products';
 @import './shops';
+@import './cart';
 // @import './example';
-// @import './example';
-*{
-    outline: 1px solid blue;
-};
+// *{
+//     outline: 1px solid blue;
+// };
