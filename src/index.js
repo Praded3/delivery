@@ -1,3 +1,8 @@
+import { common } from "./common";
+import { createMarkap } from './helpers/createMarkap';
+
+
+
 const motherboards = [
     {
     id: 1,
@@ -26,27 +31,15 @@ const motherboards = [
     img: "https://images.prom.ua/3819006958_materinskaya-plata-colorful.jpg",
     },
 ];
-const KEY_BASKET = 'basket';
+
 const list = document.querySelector('.product__list');
-const basketArr = JSON.parse(localStorage.getItem(KEY_BASKET)) ?? [];
+const basketArr = JSON.parse(localStorage.getItem(common.KEY_BASKET)) ?? [];
 
 
 
 
-function createMarkap(arr) {
-    const markap = arr.map(
-        ({ id, name, price, img }) => 
-        ` <li class='product__item _list' data-id="${id}">
-            <img src="${img}" alt="${name}" width="300">
-            <h2 class='product__title'>${name}</h2>
-            <h3 class='product__price-title'>Price: <span class='product__price-value'>${price}</span></h3>
-            <button type='button' class='product__btn'>add to cart</button>
-          </li>`
-    ).join('');
-     console.log(markap);
-    list.innerHTML = markap;
-}
-createMarkap(motherboards);
+
+createMarkap(motherboards, list);
 list.addEventListener('click', onListClick);
 
 function onListClick(evt) {
@@ -55,25 +48,26 @@ function onListClick(evt) {
         const { id } = evt.target.closest('.product__item').dataset;
         const product = findProduct(Number(id), motherboards );
        
-        let value = 0;
-        product.value += 1;
-        product.value = value;
-     
+        
+        // value += 1;
+        // product.value = value;
+        
         // value += 1;
         //  console.log(value);
          
-        
+        let value = 1;
+        product.value = value;
+        console.log(value);
         const inStorage = basketArr.some(({ id })=> id === product.id);
         console.log(inStorage);
         if (inStorage) {
-            
             return
         }  
          console.log(product.id);
         
          basketArr.push(product);
         console.log(basketArr);
-        localStorage.setItem(KEY_BASKET, JSON.stringify(basketArr))
+        localStorage.setItem(common.KEY_BASKET, JSON.stringify(basketArr))
     }
 }
 
