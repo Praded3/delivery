@@ -26,3 +26,5 @@ const motherboards = [
     img: "https://images.prom.ua/3819006958_materinskaya-plata-colorful.jpg",
     },
 ];
+
+export {motherboards}

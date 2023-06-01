@@ -1,52 +1,65 @@
 import { common } from "./common";
 import { createMarkap } from './helpers/createMarkap';
-
-
-
-const motherboards = [
-    {
-    id: 1,
-    name: "Материнська плата для майнінгу BTC B250C на 12 відеокарт",
-    price: 4000,
-    img: "https://images.prom.ua/3877149551_materinskaya-plata-dlya.jpg",
-    },
-    {
-    id: 2,
-    name: "Материнська плата для майнінгу BTC B250C на 12 відеокарт",
-    price: 5000,
-        img: "https://images.prom.ua/3925229878_materinskaya-plata-dlya.jpg",
-    },
-
-    {
-    id: 3,
-    name: "Материнська плата B75. Майнинг комплект на 8 видеокарт",
-    price: 3200,
-    img: "https://images.prom.ua/3905639523_materinskaya-plata-b75usb.jpg",
-    },
-    
-    {
-    id: 4,
-    name: "Материнська плата Colorful B250-BTC",
-    price: 3800,
-    img: "https://images.prom.ua/3819006958_materinskaya-plata-colorful.jpg",
-    },
-];
+import { motherboards } from './motherboard';
+import { risers } from './riser';
+import { ssds } from './ssd';
 
 const list = document.querySelector('.product__list');
 const basketArr = JSON.parse(localStorage.getItem(common.KEY_BASKET)) ?? [];
+const shopsList =  document.querySelector('.shops__list');
+
+const motherboardsItem = document.querySelector('._js-motherboardsItem');
+const ssdItem = document.querySelector('._js-ssdItem');
+const risersItem = document.querySelector('._js-risersItem');
+
+ console.log(ssdItem);
+
+let qqq = motherboards;
+shopsList.addEventListener('click', onShopsItemClick);
+createMarkap(qqq, list);
+function onShopsItemClick(evt) {
+    evt.preventDefault();
+    // console.log(evt.currentTarget);
+    // console.log(evt.target);
+    if (evt.target === motherboardsItem) {
+        console.log(evt.target === motherboardsItem);
+        qqq = motherboards;
+        createMarkap(motherboards, list);
+        //  product = findProduct(Number(id), motherboards );
+
+    } else if (evt.target === ssdItem) {
+         console.log(evt.target === ssdItem);
+        createMarkap(ssds, list);
+         qqq = ssds;
+        //  product = findProduct(Number(id), ssds );
+
+    }
+    else {
+        console.log(evt.target === risersItem)
+        createMarkap(risers, list);
+         qqq = risers;
+        //  product = findProduct(Number(id), risers );
+
+    }
+    // default (evt.target = risersItem) {
+    //      console.log(evt.target === risersItem);
+    //     // createMarkap(risers, list);
+    // }
+
+}
 
 
 
 
-
-createMarkap(motherboards, list);
+// createMarkap(motherboards, list);
 list.addEventListener('click', onListClick);
 
 function onListClick(evt) {
     evt.preventDefault();
     if (evt.target.classList.contains('product__btn')) {
         const { id } = evt.target.closest('.product__item').dataset;
-        const product = findProduct(Number(id), motherboards );
+        
+        const product = findProduct(Number(id), qqq );
        
         
         // value += 1;
@@ -75,3 +88,5 @@ function findProduct(productId, arr) {
 
     return arr.find(({id})=> id === productId)
 }
+
+export { product };

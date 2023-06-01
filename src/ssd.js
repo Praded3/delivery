@@ -37,3 +37,4 @@ const ssds = [
         img: "https://images.prom.ua/3945517056_ssd-nakopitel-120gb.jpg",
     },
 ];
+ export {ssds}

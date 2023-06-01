@@ -8,7 +8,6 @@ function createMarkap(arr, list) {
             <button type='button' class='product__btn'>add to cart</button>
           </li>`
     ).join('');
-     console.log(markap);
     list.innerHTML = markap;
 }
 

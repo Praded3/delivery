@@ -12,15 +12,15 @@ function createBasket(arr, list) {
                 <div class="orders__item-container ">
                   <h2 class='product__title'>${name}</h2>
                   <h3 class='orders__price-title'>Price:  <span class='orders__price-value'>${price}</span></h3>
-                  <input class="orders__quantity" type="number" min="0" max="100" step="1" name="quantity" value="${value}">
+                  <input class="orders__quantity" type="number" min="1" max="100" step="1" name="quantity" value="${value}">
                   <h3 class='orders__total'>Total: ${price * value}</h3>
 
-                  <button type='button' class='orders__btn'>X</button>
                 </div>
               </li>`
     ).join('');
- 
+  // console.log(basket);
     list.innerHTML = basket;
 }
+
 
 export { createBasket }
